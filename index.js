@@ -1,8 +1,11 @@
 import express from "express";
 import { sendmail } from "./utility/mailSender.js";
 import dotenv from "dotenv";
+import cors from "cors";
+
 dotenv.config();
 const app = express();
+app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
